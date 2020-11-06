@@ -1,15 +1,14 @@
 # libshutils
 # see license file for copyright and license details
 
-PREFIX     := /usr/local
-COLLECTION := ./collection
-PARSER     := ./lib/doc_parser.sh
+include config.mk
 
 all: options
 
 options:
 	@printf "format -- runs linter + formatter\n"
 	@printf "clean  -- cleans patch files\n"
+	@printf "docs   -- generate html documentation for scripts\n"
 
 clean:
 	${RM} *.diff *.orig *.rej
@@ -24,6 +23,6 @@ install:
 	cp ${COLLECTION}/* ${PREFIX}/bin
 
 docs:
-	printf "%s\n" ${COLLECTION}/* | xargs -I{} -n1 ${PARSER} '{}'
+	@-printf "%s\n" ${COLLECTION}/* | xargs -I{} -n1 ${PARSER} '{}'
 
 .PHONY: all clean format options install docs
