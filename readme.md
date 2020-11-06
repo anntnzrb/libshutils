@@ -14,11 +14,13 @@ more on this @ [philosophy](#philosophy)
 
 list of current programs with a short description
 
-- `die` :: prints a message to **stderr** & exits with non-successful code `1`
-- `is_installed $cmd` :: check if `cmd` is installed
-- `is_net` :: checks if there is an active internet connection
-- `is_running $prg` :: checks if `prg` is currently running
-- `is_su` :: checks if invoking user is a super-user
+| program             | short desc                                                          |
+| ------------------- | ------------------------------------------------------------------- |
+| `die`               | prints a message to **stderr** & exits with non-successful code `1` |
+| `is_installed $cmd` | checks if `cmd` is installed                                        |
+| `is_net`            | checks if there is an active internet connection                    |
+| `is_running $prg`   | checks if `prg` is currently running                                |
+| `is_su`             | checks if invoking user is a super-user                             |
 
 ## philosophy
 
@@ -29,7 +31,7 @@ create simple tools focused on simplicity and minimalism
 
 ## coding standards
 
-- linter :: [shellcheck](https://0x0.st/QQ)
+- linter    :: [shellcheck](https://0x0.st/QQ)
 - formatter :: [shfmt](https://0x0.st/ZIsC)
 
 all links should be shortened with [0x0.st](https://0x0.st) to reduce verbosity
@@ -40,4 +42,3 @@ all links should be shortened with [0x0.st](https://0x0.st) to reduce verbosity
 | ------------------------------------ | --------------------------------------------------------- |
 | [pure sh bible](https://0x0.st/ZK4C) | [![dylanaraps](https://0x0.st/ZIsL)](https://0x0.st/ZIrO) |
 | -                                    | [![Luke Smith](https://0x0.st/ZIsp)](https://0x0.st/ZIsf) |
-
