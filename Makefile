@@ -1,6 +1,10 @@
 # libshutils
 # see license file for copyright and license details
 
+PREFIX     := /usr/local
+COLLECTION := ./collection
+PARSER     := ./lib/doc_parser.sh
+
 all: options
 
 options:
@@ -14,4 +18,12 @@ format:
 	@printf '\nformatting files...\n'
 	@-${SHELL} ./lib/formatter
 
-.PHONY: all clean format options
+install:
+	mkdir -p ${PREFIX}/bin
+	chmod 755 ${COLLECTION}/*
+	cp ${COLLECTION}/* ${PREFIX}/bin
+
+docs:
+	printf "%s\n" ${COLLECTION}/* | xargs -I{} -n1 ${PARSER} '{}'
+
+.PHONY: all clean format options install docs
