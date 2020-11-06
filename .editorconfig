@@ -1,0 +1,18 @@
+root = true
+
+# used for sh files as we are not using script.sh extension
+[*]
+# general
+charset = utf-8
+indent_style = space
+indent_size = 4
+tab_width = 4
+max_line_length = 79
+trim_trailing_whitespace = true
+end_of_line = lf
+insert_final_newline = true
+
+# shell-specific
+shell_variant      = posix
+binary_next_line   = true
+space_redirects    = true

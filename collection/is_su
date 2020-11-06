@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# **
+# checks if invoking user is root;
+# *
+
+[ "$(id -u)" -eq 0 ]
