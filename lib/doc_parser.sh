@@ -7,6 +7,9 @@
 #   printf "%s\n" ./* | xargs -I{} -n1 ./doc_parser.sh '{}'
 
 is_docs() {
+    # **
+    # Checks is $1 is documentation or just decoration
+    # *
     if [ -n "$1" ] && [ "$(printf "%c" "$1")" != '*' ]; then
         echo 0
     else
@@ -15,26 +18,44 @@ is_docs() {
 }
 
 wrap() {
+    # **
+    # Wraps $1 in the HTML tag $2
+    # *
     body="$1"
     tag="$2"
 
-    echo "<$tag>$body</$tag>"
+    [ -n "$body" ] && echo "<$tag>$body</$tag>"
 }
 
 wrap_p() {
+    # **
+    # Wraps $1 in 'p' tags
+    # *
     wrap "$1" 'p'
 }
 
 wrap_h3() {
+    # **
+    # Wraps $1 in 'h' tags
+    # *
     wrap "$1" 'h3'
 }
 
 trim() {
-    no_trailing=${1%* }               # strip trailing whitespace
-    printf "%s\n" "${no_trailing#* }" # strip leading whitespace
+    # **
+    # Trims leading and trailing whitespace from $1
+    # *
+    echo "$1" | awk '{gsub(/^ +| +$/,"");print}'
 }
 
-wrap_h3 "${1##*/}" # script name
+basename() {
+    # **
+    # Extracts the basename from $1
+    # *
+    echo "${1##*/}"
+}
+
+wrap_h3 "$1"
 
 is_header=0
 desc=""
@@ -50,4 +71,4 @@ while read -r x xs; do
     fi
 done < "${1:-/dev/stdin}"
 
-[ -n "$desc" ] && wrap_p "$(trim "$desc")"
+wrap_p "$(trim "$desc")"
