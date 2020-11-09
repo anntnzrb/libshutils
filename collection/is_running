@@ -1,9 +1,9 @@
 #!/bin/sh
 
 # **
-# checks if "$1" is currently running;
+# Checks if "$1" is currently running;
 #
-# process name ($1) must be exact
+# Process name "$1" must be exact
 # *
 
 pgrep -cx "$1" >/dev/null

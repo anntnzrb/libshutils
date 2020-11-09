@@ -1,9 +1,9 @@
 #!/bin/sh
 
 # **
-# checks if there is an active internet connection;
+# Checks if there is an active Internet connection
 #
-# "example.com" proffered (this is the purpose of this website)
+# "example.com" preferred (this is the purpose of this website)
 # *
 
 ping -q -c 1 "example.com" >/dev/null 2>&1

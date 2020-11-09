@@ -1,9 +1,9 @@
 #!/bin/sh
 
 # **
-# checks if command "$1" is installed;
+# Checks if command "$1" is installed
 #
-# verifies if the file is an executable file, this is used to prevent
+# Verifies if the file is an executable file, this is used to prevent
 # conflicts with user-defined aliases and functions
 # *
 
