@@ -15,7 +15,7 @@ clean:
 
 format:
 	@printf '\nformatting files...\n'
-	@-${SHELL} ./lib/formatter
+	@-${SHELL} ./lib/formatter.sh
 
 install:
 	mkdir -p ${PREFIX}/bin
