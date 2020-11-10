@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # **
-# Prints a message stderr & exits script with non-successful code "1"
+# Prints a message to stderr & exits script with non-successful code "1"
 # *
 
 printf '%s\n' "$@" >&2
