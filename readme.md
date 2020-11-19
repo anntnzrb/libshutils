@@ -2,17 +2,17 @@
 
 # libshutils
 
-collection of POSIX-compliant shell scripts
+Collection of POSIX-compliant shell scripts.
 
-## purpose
+## Purpose
 
-the main goal is to create simple and minimal programs
+The main goal is to create simple and minimal programs.
 
 more on this @ [philosophy](#philosophy)
 
-## collection
+## Collection
 
-list of current programs with a short description
+List of current programs with a short description:
 
 | program             | short desc                                                          |
 | ------------------- | ------------------------------------------------------------------- |
@@ -22,21 +22,21 @@ list of current programs with a short description
 | `is_running $prg`   | checks if `prg` is currently running                                |
 | `is_su`             | checks if invoking user is a super-user                             |
 
-## philosophy
+## Philosophy
 
-create simple tools focused on simplicity and minimalism
+Create simple tools focused on simplicity and minimalism.
 
-> ...designing simple software is far more difficult... however one has to pay
-> this price to achieve reliability and maintainability
+> ...designing simple software is far more difficult... however, one has to pay
+> this price to achieve reliability and maintainability.
 
-## coding standards
+## Coding Standards
 
 - linter    :: [shellcheck](https://0x0.st/QQ)
 - formatter :: [shfmt](https://0x0.st/ZIsC)
 
-all links should be shortened with [0x0.st](https://0x0.st) to reduce verbosity
+All links should be shortened with [0x0.st](https://0x0.st) to reduce verbosity.
 
-## acknowledgments
+## Acknowledgments
 
 | 📚                                   | ✒                                                         |
 | ------------------------------------ | --------------------------------------------------------- |

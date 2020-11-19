@@ -2,9 +2,6 @@
 
 # **
 # Checks if command "$1" is installed
-#
-# Verifies if the file is an executable file, this is used to prevent
-# conflicts with user-defined aliases and functions
 # *
 
-[ -x "$(command -v "$1")" ]
+command -v "$1" >/dev/null
