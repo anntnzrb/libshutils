@@ -4,4 +4,4 @@
 # Checks if invoking user is root
 # *
 
-[ $(id -u) -eq 0 ]
+test `id -u` -eq 0
