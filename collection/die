@@ -4,5 +4,10 @@
 # Prints a message to stderr & exits script with non-successful code "1"
 # *
 
-printf '%s\n' "$@" >&2
-exit 1
+case $# in
+    0)  exit 1 ;;
+    *)
+        printf "%s\\n" "$@" >&2
+        exit 1
+        ;;
+esac
