@@ -6,4 +6,4 @@
 # Process name "$1" must be exact
 # *
 
-ps -C "$1" >/dev/null
+pgrep -x "$1" >/dev/null
