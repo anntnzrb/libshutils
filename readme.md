@@ -32,7 +32,6 @@ Create simple tools focused on simplicity and minimalism.
 ## Coding Standards
 
 - linter    :: [shellcheck](https://0x0.st/QQ)
-- formatter :: [shfmt](https://0x0.st/ZIsC)
 
 All links should be shortened with [0x0.st](https://0x0.st) to reduce verbosity.
 

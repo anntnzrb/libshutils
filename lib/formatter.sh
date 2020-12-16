@@ -48,18 +48,14 @@ is_installed() {
 # -----------------------------------------------------------------------------
 
 # quit if tools not installed
-if ! { is_installed "shellcheck" && is_installed "shfmt"; }; then
-    die 'tools not installed :: shellcheck & shfmt are required!'
-fi
+! is_installed "shellcheck" \
+    && die 'tools not installed :: shellcheck is required!'
 
 # programs with pre-defined arguments
 shellcheck_cmd="shellcheck --color --shell=sh"
-shfmt_cmd="shfmt -d -s -p -w -i 4 -bn"
 
 if $shellcheck_cmd "$collection"/*; then
-    $shfmt_cmd "$collection"/* >"$root/formatter.diff"
-    printf 'a .diff file with formatting changes has been generated at %s\n' \
-        "$root/formatter.diff"
+    printf 'Linting checks passed\n'
 else
     die 'Linting checks were not successful; fix/suppress them to format'
 fi
