@@ -5,6 +5,7 @@
 # -----------------------------------------------------------------------------
 
 # paths
+# TODO: refactor to portable backticks
 root="$(dirname "$(dirname "$(readlink -f "$0")")")"
 collection="$root/collection"
 
@@ -17,11 +18,18 @@ die() {
     # prints a message stderr & exits script with non-successful code "1"
     # *
 
-    printf '%s\n' "$@" >&2
-    exit 1
+    case $# in
+        0) exit 1 ;;
+        *)
+            printf '%s\n' "$@" >&2
+            exit 1
+            ;;
+    esac
 }
 
 is_installed() {
+    # TODO: `-x` is not portable
+
     # **
     # checks if command "$1" is installed;
     #
@@ -29,7 +37,10 @@ is_installed() {
     # conflicts with user-defined aliases and functions
     # *
 
-    [ -x "$(command -v "$1")" ]
+    # shellcheck disable=2006
+    # backtick notation is portable
+
+    test -x "`command -v "$1"`"
 }
 
 # -----------------------------------------------------------------------------

@@ -1,7 +1,15 @@
 #!/bin/sh
 
+# TODO: `-x` is not portable
+
 # **
 # Checks if command "$1" is installed
+#
+# verifies if the file is an executable file, this is used to prevent
+# conflicts with user-defined aliases and functions
 # *
 
-command -v "$1" >/dev/null
+# shellcheck disable=2006
+# backtick notation is portable
+
+test -x "`command -v "$1"`"
