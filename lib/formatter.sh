@@ -5,8 +5,8 @@
 # -----------------------------------------------------------------------------
 
 # paths
-ROOT="$(dirname "$(dirname "$(readlink -f "$0")")")"
-COLLECTION="$ROOT/collection"
+root="$(dirname "$(dirname "$(readlink -f "$0")")")"
+collection="$root/collection"
 
 # -----------------------------------------------------------------------------
 # functions
@@ -38,17 +38,17 @@ is_installed() {
 
 # quit if tools not installed
 if ! { is_installed "shellcheck" && is_installed "shfmt"; }; then
-    die "tools not installed :: shellcheck & shfmt are required!"
+    die 'tools not installed :: shellcheck & shfmt are required!'
 fi
 
 # programs with pre-defined arguments
-SHELLCHECK_CMD="shellcheck --color --shell=sh"
-SHFMT_CMD="shfmt -d -s -p -w -i 4 -bn"
+shellcheck_cmd="shellcheck --color --shell=sh"
+shfmt_cmd="shfmt -d -s -p -w -i 4 -bn"
 
-if $SHELLCHECK_CMD "$COLLECTION"/*; then
-    $SHFMT_CMD "$COLLECTION"/* >"$ROOT/formatter.diff"
+if $shellcheck_cmd "$collection"/*; then
+    $shfmt_cmd "$collection"/* >"$root/formatter.diff"
     printf 'a .diff file with formatting changes has been generated at %s\n' \
-        "$ROOT/formatter.diff"
+        "$root/formatter.diff"
 else
-    die "Linting checks were not successful; fix/suppress them to format"
+    die 'Linting checks were not successful; fix/suppress them to format'
 fi
